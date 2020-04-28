@@ -1,0 +1,5 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lpp.lppvideoplayer" >
+    <!-- 用于监听蓝牙耳机的插拔-->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+</manifest>

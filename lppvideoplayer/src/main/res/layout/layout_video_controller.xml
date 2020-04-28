@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fl_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_video_controller"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="match_parent">
+        <!-- 顶部阴影 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_100"
+            android:background="@drawable/shape_video_controll_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- 底部阴影 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_100"
+            android:background="@drawable/shape_video_title_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- 标题部分-->
+        <include layout="@layout/layout_video_title"/>
+
+        <!-- 以下为控制器部分-->
+        <include layout="@layout/layout_video_sub_controller"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!-- 亮度部分-->
+        <include layout="@layout/layout_gesture_brightness"/>
+
+        <!-- 音量部分-->
+        <include layout="@layout/layout_gesture_volume"/>
+
+        <!-- 快进部分-->
+        <include layout="@layout/layout_gesture_seek"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

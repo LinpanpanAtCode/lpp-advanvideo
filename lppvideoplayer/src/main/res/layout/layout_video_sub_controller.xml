@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <SeekBar
+            android:id="@+id/seek_bar"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_15"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginRight="@dimen/dp_15"
+            android:layout_marginBottom="@dimen/dp_5"
+            android:maxHeight="@dimen/dp_2"
+            android:minHeight="@dimen/dp_2"
+            android:paddingLeft="@dimen/dp_15"
+            android:paddingRight="@dimen/dp_15"
+            android:progressDrawable="@drawable/video_player_progress_diy"
+            android:thumb="@mipmap/seek_bar_point"
+            app:layout_constraintBottom_toTopOf="@id/rl_play"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <RelativeLayout
+            android:id="@+id/rl_play"
+            android:layout_width="@dimen/dp_43"
+            android:layout_height="@dimen/dp_43"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginBottom="@dimen/dp_15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_play"
+                android:layout_width="@dimen/dp_18"
+                android:layout_height="@dimen/dp_18"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/pause" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_current_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:text="00:00"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dp_16"
+            app:layout_constraintBottom_toBottomOf="@id/rl_play"
+            app:layout_constraintLeft_toRightOf="@id/rl_play"
+            app:layout_constraintTop_toTopOf="@id/rl_play" />
+
+
+        <TextView
+            android:id="@+id/tv_change_quality"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_43"
+            android:text="超清"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dp_16"
+            android:gravity="center"
+            android:layout_marginRight="@dimen/dp_15"
+            app:layout_constraintBottom_toBottomOf="@id/rl_play"
+            app:layout_constraintRight_toLeftOf="@id/tv_total_time"
+            app:layout_constraintTop_toTopOf="@id/rl_play"
+            app:layout_goneMarginRight="@dimen/dp_27">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_total_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_15"
+            android:paddingLeft="@dimen/dp_12"
+            android:text="00:00"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dp_16"
+            app:layout_constraintBottom_toBottomOf="@id/rl_play"
+            app:layout_constraintRight_toLeftOf="@id/rl_fullscreen"
+            app:layout_constraintTop_toTopOf="@id/rl_play"
+            app:layout_goneMarginRight="@dimen/dp_27" />
+
+        <RelativeLayout
+            android:id="@+id/rl_fullscreen"
+            android:layout_width="@dimen/dp_43"
+            android:layout_height="@dimen/dp_43"
+            android:layout_marginLeft="@dimen/dp_35"
+            android:layout_marginRight="@dimen/dp_15"
+            android:layout_marginBottom="@dimen/dp_15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_fullscreen"
+                android:layout_width="@dimen/dp_18"
+                android:layout_height="@dimen/dp_18"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/fullscreen" />
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</merge>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.lpp.lppvideoplayer.player.video.widget.LppVideoPlayer
+            android:id="@+id/player"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_220"
+            android:background="#000000"
+            android:visibility="visible" />
+    </FrameLayout>
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="@dimen/dp_150"
+        android:text="播放"
+        android:visibility="gone"
+        android:layout_height="@dimen/dp_50" />
+</RelativeLayout>
