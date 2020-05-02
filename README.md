@@ -51,8 +51,8 @@
             android:background="#000000"
             android:visibility="visible" />
     </FrameLayout>
-  其次，通过构建者模式添加播放器相应的配置
-  VideoControllerBuilder videoControllerBuilder = new VideoControllerBuilder()
+   其次，通过构建者模式添加播放器相应的配置
+   VideoControllerBuilder videoControllerBuilder = new VideoControllerBuilder()
                 .setNeedFullScreenBtn(true)// 设置是否需要全屏切换按钮
                 .setFullScreenDo(videoPlayer.getDefaultVideoFullScreenDo())// 设置全屏点击事件，这里使用了自带的全屏点击事件
                 .setControllerMode(VideoControllerBuilder.CONTROLLER_MODE_NORMAL)// 设置控制器的模式
@@ -85,6 +85,17 @@
    videoPlayer.setListener();
   ```
   
+  ##Log
+  v1.0.0 定义了Lpp-AdvancePlayer的接口框架，并使用ijkplayer提供了一个LppVideoPlayer的使用，实现了NormalVideoControllerView的视频播放控制器<br>
+  ps:如果需要定制自己的视频控制器，请使用继承AbsMediaControllerView方式,可参考
+  {@link com.lpp.lppvideoplayer.controller.widget.NormalVideoControllerView}
+  ```
+    继承实现自己的播放器
+    public class YourSelfControllerView extends AbsMediaControllView {...}
+    注入播放器控制器
+    videoPlayer.attachVideoController(YourSelfControllerView);
+  ```
+  后续：状态转移播放器，悬浮播放器，仿网易云音乐音乐播放器
   
 
 
