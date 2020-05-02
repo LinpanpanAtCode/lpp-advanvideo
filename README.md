@@ -15,4 +15,11 @@
   IJKPlayer
     extends
        IMediaAblity
+  
+  AbsMediaPlayer{
+    AbsMediaControllView mediaControllerView
+    IMediaAblity  mediaAbility;
+  }
 ```
+
+
