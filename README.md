@@ -81,6 +81,8 @@
    videoPlayer.setUrl(videoUrl);
    // 开始播放
    videoPlayer.startPlay();
+   // 添加事件监听
+   videoPlayer.setListener();
   ```
   
   
