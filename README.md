@@ -3,9 +3,16 @@
 写这个播放器的原因是基于本人在项目组碰到的一系列有关播放器相关的功能做一个具体的总结，相关的业务主要是项目中有很多视频业务，音频业务以及底层播放能力的选择。<br>
 首先这个播放器的设计理念如下入:<br>
 ```
-  NormalVideoControllerView \ NormalAudioCotroller  LppVideoPlayer      LppAudioPlayer      IJKPlayer
-    extends                                           extends             extends             extends
-                                                        AbsVideoPlayer
-                                                         extends
-     AbsMediaControllView                                  AbsMediaPlayer                      IMediaAblity
+  NormalVideoControllerView \ NormalAudioCotroller  
+    extends
+      AbsMediaControllView
+  
+  LppVideoPlayer      LppAudioPlayer
+    extends
+      AbsVideoPlayer
+        extends         extends
+          AbsMediaPlayer
+  IJKPlayer
+    extends
+       IMediaAblity
 ```
