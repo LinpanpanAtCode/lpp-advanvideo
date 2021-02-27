@@ -101,6 +101,9 @@
     videoPlayer.attachVideoController(YourSelfControllerView);
   ```
   后续：状态转移播放器，悬浮播放器，仿网易云音乐音乐播放器
+   
+  ##Log 2021/02/27
+  在这里解释播放器几个重要的点：
+  1. 如何统一的进行全屏和非全屏的切换，在项目中可能有这么几个场景。视频详情页，上方是视频，下方是视频简介。视频列表，一个页面有多个视频源。ViewPager+fragment的视频。那么不同场景的视频的全屏缩放来说，在业务层面的处理似乎是不一样的，我们为了统一管理这个全屏和非全屏之间的切换。这里应用到了activity对应的视图树。我们都知道，每一个activity对应一个window，具体的实现是PhoneWindow，PhoneWindow下面有一个根视图叫做decorView，decorView是一个framenLayout的子类，所以后加上去的view会呈现在最上方，所以当点击全屏和非全屏切换的时候，将对应的videoView从源父控件移除，再添加到decorView当中，切换非全屏的时候再重新移回原来的父控件当中。
+  2. 如何做到声音和画面分离的。ijkplayer本身只是提供了多媒体的解码操作，当解码之后的播放，它是仅仅播放声音而不播放画面的，画面的数据是通过设置sufaceView或者textureView来进行接收的。这里注意一个点，为了防止画面的横竖屏切换的时候会重复创建对应的surfaceView，这里需要将surfaceView进行缓存，在每一次的回调中都使用同一个surfaceView，这样能解决画面黑屏一闪的问题。
   
-
-
